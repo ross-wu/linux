@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 repo_dir=$(cd `dirname $0` && pwd)
 
 echo "repo_dir=${repo_dir}"
