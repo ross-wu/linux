@@ -15,7 +15,7 @@ RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git
 
 function _user_host() {
   local me
-  echo "%{$fg[cyan]%}%n@%m%{$reset_color%}:"
+  echo "%{$fg[cyan]%}%n@%3m%{$reset_color%}:"
 
   # if [[ -n $SSH_CONNECTION ]]; then
   #   me="%n@%m"
