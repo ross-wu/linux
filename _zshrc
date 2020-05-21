@@ -92,6 +92,7 @@ export GOPATH=$HOME/go
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,3 +109,8 @@ export GOPATH=$HOME/go
 # Key bindings
 bindkey "[D" emacs-backward-word
 bindkey "[C" emacs-forward-word
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+setopt no_share_history
