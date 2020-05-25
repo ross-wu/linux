@@ -10,9 +10,17 @@ bak_dir=$HOME/bak/linux_`date "+%Y%m%d-%H.%M.%S"`
 mkdir -p $bak_dir
 
 mv .zshrc $bak_dir/bak.zshrc
+mv .profile $bak_dir/bak.profile
+
 ln -s ${repo_dir}/_zshrc ${HOME}/.zshrc
 if [[ $? -ne 0 ]]; then
     echo "ERROR: creating my .zshrc"
+    exit 255
+fi
+
+ln -s ${repo_dir}/_profile ${HOME}/.profile
+if [[ $? -ne 0 ]]; then
+    echo "ERROR: creating my .profile"
     exit 255
 fi
 
