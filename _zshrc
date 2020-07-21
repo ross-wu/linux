@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/go/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/go/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:$HOME/homebrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -72,12 +72,14 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     osx
-    emacs
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Enable g4d
+source /etc/bash_completion.d/g4d
 
 export GOPATH=$HOME/go
 
@@ -92,6 +94,7 @@ export GOPATH=$HOME/go
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,3 +113,7 @@ bindkey "[D" emacs-backward-word
 bindkey "[C" emacs-forward-word
 
 zstyle ':completion:*' users root $USER
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+setopt no_share_history
